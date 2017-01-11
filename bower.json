@@ -1,0 +1,20 @@
+{
+  "name": "Test-for-PovioLabs",
+  "version": "1.0.0",
+  "authors": [
+    "Andrej Vajagic <drejcreative@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.1"
+  }
+}
