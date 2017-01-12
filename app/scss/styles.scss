@@ -1,17 +1,19 @@
-*,
-:after,
-:before {
-  box-sizing: border-box;
-}
+/*
+  	Name: Test for Povio Labs
+  	Version: 1.0
+  	Author: Andrej Vajagoc
+  	Website: http://drejcreative.com
+  */
 
-.clearfix {
-  &:after,
-  &:before {
-    content: '';
-    display: table;
-  }
-  &:after {
-    clear: both;
-    display: block;
-  }
-}//.clearfix
+  ///////////////////
+  // Imports
+  ///////////////////
+  @import "../../bower_components/susy/sass/susy";
+  @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+  // style.scss imports
+
+  //@import 'utils/module';
+  @import 'base/module';
+  //@import 'components/module';
+  @import 'layout/module';
