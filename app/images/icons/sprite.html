@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>Icon kit preview | gulp-svg-sprites</title>
+    <link href="css/sprite.css" rel="stylesheet" type="text/css" media="all"/>
+    <style type="text/css">@CHARSET "UTF-8";
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        color: #666;
+        background: #fafafa;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.4
+    }
+
+    header {
+        display: block;
+        padding: 3em 3em 2em 3em;
+        background-color: #fff
+    }
+
+    header p {
+        margin: 0 0 0 0;
+    }
+
+    nav {
+        font-size: .7em;
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0
+    }
+
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 2em;
+        color: #0f7595;
+        white-space: nowrap
+    }
+
+    nav a:hover {
+        text-decoration: underline
+    }
+
+    nav a.current {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #666
+    }
+
+    section {
+        border-top: 1px solid #eee;
+        padding: 2em 3em 0 3em
+    }
+
+    ul {
+        margin: 0;
+        padding: 0
+    }
+
+    .icon-boxes li {
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 2em 2em 0;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 1em 1em 1em 1em;
+        cursor: default
+    }
+
+    .icon-box {
+        margin: 0;
+        width: 144px;
+        height: 144px;
+        position: relative;
+        background: #ccc url(data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=) top left repeat;
+        border: 1px solid #ccc;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center
+    }
+    .icon-box.inverted {
+        background: black;
+    }
+
+    .icon {
+        display: inline;
+        display: inline-block
+    }
+
+    .snippet-popover {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 16px;
+        z-index: 1;
+        transition: all .3s;
+    }
+    .snippet-popover.active {
+        display: block;
+        opacity: 1;
+    }
+
+    pre {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5px 0;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    footer {
+        display: block;
+        margin: 0;
+        padding: 0 3em 3em 3em
+    }
+
+    footer p {
+        margin: 0;
+        font-size: .7em
+    }
+
+    footer a {
+        color: #0f7595;
+        margin-left: 0
+    }
+    </style>
+</head>
+<body>
+<header>
+    <h1 id="logo">Gulp SVG Sprites</h1>
+    <h4>Files Generated:</h4>
+    <ol>
+        <li><a href="css/sprite.css">css/sprite.css</a></li>
+        <li><a href="svg/sprite.svg">svg/sprite.svg</a></li>
+    </ol>
+    <h4>Usage:</h4>
+    <ol>
+        <li>
+            Include the <a href="css/sprite.css">CSS file</a> into your project.
+        </li>
+        <li>
+            Paste one of the snippets anywhere into your website.
+        </li>
+    </ol>
+</header>
+<section>
+    <nav><button onclick="toggleMode()">Toggle PNG/SVG</button> (showing <span id="mode-view">SVG</span>)<br><br><input type="range" onchange="setSize(this.value)" min="2" max="14"></nav>
+    <ul class="icon-boxes">
+
+
+
+      
+
+        <li title="icon-dine">
+            <div class="icon-box" id="icon-box-icon-dine">
+                <div class="icon icon-dine"></div>
+            </div>
+            <h2>icon-dine</h2>
+            <button onclick="showPopover('snippet-icon-dine')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-dine')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-dine">
+                <pre><code>&lt;span class=&quot;icon icon-dine&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-drink">
+            <div class="icon-box" id="icon-box-icon-drink">
+                <div class="icon icon-drink"></div>
+            </div>
+            <h2>icon-drink</h2>
+            <button onclick="showPopover('snippet-icon-drink')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-drink')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-drink">
+                <pre><code>&lt;span class=&quot;icon icon-drink&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-explore-active">
+            <div class="icon-box" id="icon-box-icon-explore-active">
+                <div class="icon icon-explore-active"></div>
+            </div>
+            <h2>icon-explore-active</h2>
+            <button onclick="showPopover('snippet-icon-explore-active')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-explore-active')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-explore-active">
+                <pre><code>&lt;span class=&quot;icon icon-explore-active&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-explore-active_2">
+            <div class="icon-box" id="icon-box-icon-explore-active_2">
+                <div class="icon icon-explore-active_2"></div>
+            </div>
+            <h2>icon-explore-active_2</h2>
+            <button onclick="showPopover('snippet-icon-explore-active_2')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-explore-active_2')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-explore-active_2">
+                <pre><code>&lt;span class=&quot;icon icon-explore-active_2&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-handshake">
+            <div class="icon-box" id="icon-box-icon-handshake">
+                <div class="icon icon-handshake"></div>
+            </div>
+            <h2>icon-handshake</h2>
+            <button onclick="showPopover('snippet-icon-handshake')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-handshake')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-handshake">
+                <pre><code>&lt;span class=&quot;icon icon-handshake&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-house">
+            <div class="icon-box" id="icon-box-icon-house">
+                <div class="icon icon-house"></div>
+            </div>
+            <h2>icon-house</h2>
+            <button onclick="showPopover('snippet-icon-house')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-house')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-house">
+                <pre><code>&lt;span class=&quot;icon icon-house&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-medical">
+            <div class="icon-box" id="icon-box-icon-medical">
+                <div class="icon icon-medical"></div>
+            </div>
+            <h2>icon-medical</h2>
+            <button onclick="showPopover('snippet-icon-medical')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-medical')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-medical">
+                <pre><code>&lt;span class=&quot;icon icon-medical&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-messages">
+            <div class="icon-box" id="icon-box-icon-messages">
+                <div class="icon icon-messages"></div>
+            </div>
+            <h2>icon-messages</h2>
+            <button onclick="showPopover('snippet-icon-messages')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-messages')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-messages">
+                <pre><code>&lt;span class=&quot;icon icon-messages&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-my-location">
+            <div class="icon-box" id="icon-box-icon-my-location">
+                <div class="icon icon-my-location"></div>
+            </div>
+            <h2>icon-my-location</h2>
+            <button onclick="showPopover('snippet-icon-my-location')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-my-location')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-my-location">
+                <pre><code>&lt;span class=&quot;icon icon-my-location&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-save">
+            <div class="icon-box" id="icon-box-icon-save">
+                <div class="icon icon-save"></div>
+            </div>
+            <h2>icon-save</h2>
+            <button onclick="showPopover('snippet-icon-save')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-save')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-save">
+                <pre><code>&lt;span class=&quot;icon icon-save&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-save-copy">
+            <div class="icon-box" id="icon-box-icon-save-copy">
+                <div class="icon icon-save-copy"></div>
+            </div>
+            <h2>icon-save-copy</h2>
+            <button onclick="showPopover('snippet-icon-save-copy')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-save-copy')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-save-copy">
+                <pre><code>&lt;span class=&quot;icon icon-save-copy&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-save-copy-2">
+            <div class="icon-box" id="icon-box-icon-save-copy-2">
+                <div class="icon icon-save-copy-2"></div>
+            </div>
+            <h2>icon-save-copy-2</h2>
+            <button onclick="showPopover('snippet-icon-save-copy-2')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-save-copy-2')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-save-copy-2">
+                <pre><code>&lt;span class=&quot;icon icon-save-copy-2&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-search-grey">
+            <div class="icon-box" id="icon-box-icon-search-grey">
+                <div class="icon icon-search-grey"></div>
+            </div>
+            <h2>icon-search-grey</h2>
+            <button onclick="showPopover('snippet-icon-search-grey')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-search-grey')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-search-grey">
+                <pre><code>&lt;span class=&quot;icon icon-search-grey&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="icon-trips">
+            <div class="icon-box" id="icon-box-icon-trips">
+                <div class="icon icon-trips"></div>
+            </div>
+            <h2>icon-trips</h2>
+            <button onclick="showPopover('snippet-icon-trips')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-icon-trips')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-icon-trips">
+                <pre><code>&lt;span class=&quot;icon icon-trips&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="logo">
+            <div class="icon-box" id="icon-box-logo">
+                <div class="icon logo"></div>
+            </div>
+            <h2>logo</h2>
+            <button onclick="showPopover('snippet-logo')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-logo')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-logo">
+                <pre><code>&lt;span class=&quot;icon logo&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+    </ul>
+</section>
+<footer>
+    <p>Generated by <a href="https://github.com/shakyshane/gulp-svg-sprites">Gulp Svg Sprites</a> - Preview page courtesy of <a href="http://iconizr.com" target="_blank">iconizr</a>.</p>
+</footer>
+
+<script type="text/javascript">
+
+    var openSnippet;
+    var modeView = document.getElementById("mode-view");
+    var icons = document.querySelectorAll(".icon");
+
+    function setSize (fontSize) {
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].style.fontSize = fontSize + 'px';
+        }
+    }
+
+    function showPopover(id) {
+        openSnippet = document.getElementById(id);
+        openSnippet.classList.add("active");
+    }
+    function hidePopover() {
+
+        openSnippet.classList.remove("active");
+    }
+    function invertBackground(id) {
+        var elem = document.getElementById(id);
+        elem.classList.toggle("inverted");
+    }
+    function toggleMode() {
+        document.body.classList.toggle("no-svg") ?
+            modeView.innerHTML = "PNG" :
+            modeView.innerHTML = "SVG";
+    }
+</script>
+</body>
+</html>

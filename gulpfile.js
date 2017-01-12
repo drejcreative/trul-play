@@ -59,10 +59,10 @@ gulp.task('watch', function() {
 gulp.task('spriteSvg', function () {
   return gulp.src('app/images/svg/*.svg')
         .pipe(svgSprite())
-        .pipe(gulp.dest("app/images")) // Write the sprite-sheet + CSS + Preview
-        .pipe(filter("app/images/svg/**/*.svg"))  // Filter out everything except the SVG file
+        .pipe(gulp.dest("app/images/icons")) // Write the sprite-sheet + CSS + Preview
+        .pipe(filter("app/images/**/*.svg"))  // Filter out everything except the SVG file
         .pipe(svg2png())           // Create a PNG
-        .pipe(gulp.dest("app/images"));
+        .pipe(gulp.dest("app/images/icons"));
 });
 
 
