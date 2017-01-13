@@ -14,47 +14,154 @@
   transition: .3s ease all;
 }
 
+//=======================================
+//   Map
+//=======================================
 #map {
-    height: 100%;
-    width: 100%;
-    left: 480px;
-    position: absolute;
-    top: 0;
+  height: 100%;
+  width: 100%;
+  left: 480px;
+  position: absolute;
+  top: 0;
 }
 
+//   Top of the map
+//=======================================
+.map__top {
+  position: relative;
+  top: 30px;
+  left: 510px;
+}
+// Search bar
+.map__search {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 40%;
+  &--input {
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    border:none;
+    width: 400px;
+    border-radius: 50px;
+    padding: 20px 30px;
+
+    background-image: url("../images/svg/icon-search-grey.svg");
+    background-repeat: no-repeat;
+    background-position: right 30px top 15px;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      font-family: $main-font;
+      font-size: 17px;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      font-family: $main-font;
+      font-size: 17px
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      font-family: $main-font;
+      font-size: 17px
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      font-family: $main-font;
+      font-size: 17px
+    }
+  } // End of input
+} // End of map__search
+
+//Right icon part
+.map__icons {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-family: $main-font;
+  font-size: 18px;
+  font-weight: $bold;
+  color: $light;
+  &--number {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+  }
+} // map__icon
+//icon colors
+.number-1 {
+  background: $number1;
+  border: 3px solid $focus;
+  box-shadow: 7px 7px 30px 0 rgba(243, 138, 25, 0.9);
+}
+//icon colors
+.number-2 {
+  background: $number2;
+  box-shadow: 7px 7px 30px 0 rgba(49, 164, 241, 0.9);
+  border: 3px solid $marker;
+}
+//icon colors
+.number-3 {
+  background: $number3;
+  box-shadow: 7px 7px 30px 0 rgba(202, 74, 234, 0.9);
+  border: solid 3px $marker2;
+}
+
+//   Bottom of the map
+//=======================================
+.map__bottom {
+  position: relative;
+  bottom: -80%;
+  left: 510px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $light;
+  box-shadow: 0 0 30px 0 rgba(146, 152, 160, 0.1);
+  &--icon {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+  }
+} // map__bottom
+
+//=======================================
+//   Show and hide sidemenu code
+//=======================================
 #wrapper.show-nav .main {
   -webkit-transform: translateX(-480px);
   transform: translateX(-480px);
 }
 
-
-
-
+//=======================================
+//   Map markers
+//=======================================
 .customMarker {
-    position:absolute;
-    cursor:pointer;
-    display: block;
-    width: 63px;
-    height: 63px;
-    border-radius: 50%;
-    border: 3px solid $focus;
-    box-shadow: 5px 5px 20px 0 rgba(243, 138, 25, 0.3);
+  position:absolute;
+  cursor:pointer;
+  display: block;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  border: 3px solid $focus;
+  box-shadow: 5px 5px 20px 0 rgba(243, 138, 25, 0.3);
 }
 .customMarker:active {
-    position:absolute;
-    cursor:pointer;
-    display: block;
-    width: 63px;
-    height: 63px;
-    border-radius: 50%;
-    border: 3px solid $focus;
-    box-shadow: 0px 0px 0px 27px rgba(243, 138, 24, 0.2),
-                0px 0px 0px 44px rgba(243, 138, 24, 0.17),
-                0px 0px 0px 65px rgba(243, 138, 24, 0.07);
+  position:absolute;
+  cursor:pointer;
+  display: block;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  border: 3px solid $focus;
+  box-shadow: 0px 0px 0px 27px rgba(243, 138, 24, 0.2),
+              0px 0px 0px 44px rgba(243, 138, 24, 0.17),
+              0px 0px 0px 65px rgba(243, 138, 24, 0.07);
 }
 .customMarker-active {
-    @extend .customMarker;
+  @extend .customMarker;
 }
+//Active class for custom markers
 .active  {
   position:absolute;
   cursor:pointer;
@@ -67,33 +174,33 @@
               0px 0px 0px 44px rgba(243, 138, 24, 0.17),
               0px 0px 0px 65px rgba(243, 138, 24, 0.07);
 }
+//Green custom marker
 .customMarkerGreen {
-    position:absolute;
-    cursor:pointer;
-    display: block;
-    width: 63px;
-    height: 63px;
-    //border-radius: 50%;
-    border: 3px solid $marker3;
-    border-radius: 50% 50% 50% 0;
-    background: $marker3;
-    background: #transparent;
-    position: absolute;
-    transform: rotate(-45deg);
-    img {
-      transform: rotate(45deg);
-    }
+  position:absolute;
+  cursor:pointer;
+  display: block;
+  width: 63px;
+  height: 63px;
+  border: 3px solid $marker3;
+  border-radius: 50% 50% 50% 0;
+  background: $marker3;
+  position: absolute;
+  transform: rotate(-45deg);
+  img {
+    transform: rotate(45deg);
+  }
 }
 
+//   position of images for custom markers
+//=======================================
 .customMarker img,
 .customMarker-active img,
 .customMarkerGreen img {
-    width:57px;
-    height:57px;
-    //margin:5px;
-    border-radius: 50%;
+  width:57px;
+  height:57px;
+  border-radius: 50%;
 }
-
+// Dot markers
 .secound-marker {
   position:absolute;
   cursor:pointer;
@@ -105,6 +212,7 @@
   border: 3px solid $light;
   box-shadow: 7px 7px 30px 0 rgba(49, 164, 241, 0.9);
 }
+// Dot markers
 .third-marker {
   position:absolute;
   cursor:pointer;

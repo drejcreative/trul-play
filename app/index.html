@@ -39,14 +39,31 @@
     <!--===============================================-->
     <div id="wrapper">
       <div class="main">
+        <!--=================== Map ====================-->
         <div id="map"></div>
-          <div class="map__top">
 
+        <div class="map__top">
+          <div class="map__search">
+            <input class="map__search--input" type="text" placeholder="Search for friends and places">
+          </div><!-- End of search -->
+          <div class="map__icons number-1">
+            <span class="map__icons--number">1&deg</span>
           </div>
-          <div class="map__bottom">
-
+          <div class="map__icons number-2">
+            <span class="map__icons--number">2&deg</span>
           </div>
-
+          <div class="map__icons number-3">
+            <span class="map__icons--number">3&deg</span>
+          </div>
+        </div><!-- map__top -->
+        <div class="map__bottom">
+          <div class="map__bottom--icon">
+            <span class="icon icon-my-location"></span>
+          </div>
+        </div>
+        <!--==================================================-->
+        <!--                    Sidenav                       -->
+        <!--==================================================-->
         <div class="sidenav">
           <div class="sidenav__header">
             <div class="sidenav__top">
@@ -64,6 +81,7 @@
                 </div>
             </div><!-- Bottom -->
           </div><!-- sidenav__header -->
+
           <div class="sidenav__body">
             <div class="sidenav__icons">
               <span class="sidenav__icons--top icon icon-house"></span>
@@ -120,8 +138,8 @@
           </div><!-- sidenav__body -->
         </div><!-- SIDENAV -->
 
-      </div>
-    </div>
+      </div><!-- End of main -->
+    </div><!-- End of wrapper -->
 
   <!--build:js js/main.min.js -->
   <!-- bower:js -->
