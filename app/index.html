@@ -28,14 +28,101 @@
         <a class="header__link header__messages--text" href=""><span class="header__messages--icon">2</span>Messages</a>
       </div><!-- Messages -->
 
+      <!--<a href="#" class="toggle-nav">Toggle Nav</a>-->
+
       <div class="header__user">
         <div class="header__user--name">John</div>
         <img class="header__user--image" src="images/profile-pics-20.jpg" alt="">
-      </div>
+      </div><!-- User -->
     </header>
+
+    <!--===============================================-->
+    <!--                    Main                       -->
+    <!--===============================================-->
+    <div id="wrapper">
+      <div class="main">
+        <div id="map"></div>
+
+        <div class="sidenav">
+          <div class="sidenav__header">
+            <div class="sidenav__top">
+              <a id="sidenav-close" href=""><span class="sidenav__top--close">x</span></a>
+              <div class="sidenav__top--buttonwrap">
+                <button class="sidenav__top--button button__main">Connect</button>
+                <button class="sidenav__top--button button__active">Message</button>
+              </div>
+            </div><!-- Top -->
+            <div class="sidenav__bottom">
+                <img class="sidenav__bottom--image" src="images/adam-parker.jpg" alt="">
+                <div class="sidenav__bottom--wrap">
+                  <h2 class="sidenav__bottom--heading">Michael, 29</h2>
+                  <h3 class="sidenav__bottom--text">San Francisco, California</h3>
+                </div>
+            </div><!-- Bottom -->
+          </div><!-- sidenav__header -->
+          <div class="sidenav__body">
+            <div class="sidenav__icons">
+              <span class="sidenav__icons--top icon icon-house"></span>
+              <span class="sidenav__icons--top icon icon-handshake"></span>
+              <span class="sidenav__icons--top icon icon-medical"></span>
+            </div><!-- sidenav__icons -->
+            <div class="sidenav__about">
+              <p class="sidenav__about--text">I am an adventurous wanderer who likes meeting new people and getting better to know about interesting cultures.</p>
+            </div>
+            <div class="sidenav__recomendation">
+              <h3 class="sidenav__recomendation--heading">My top 3 recommendations</h3>
+              <div class="sidenav__location">
+                <span class="sidenav__location--icon icon icon-dine"></span>
+                <p class="sidenav__location--place">Little Delhi - Indian Restaurant</p>
+                <span class="sidenav__location--add icon icon-save"></span>
+              </div><!-- sidenav__location -->
+              <div class="sidenav__location">
+                <span class="sidenav__location--icon icon icon-drink"></span>
+                <p class="sidenav__location--place">Oceanic View Rooftop</p>
+                <span class="sidenav__location--add icon icon-save"></span>
+              </div><!-- sidenav__location -->
+              <div class="sidenav__location">
+                <span class="sidenav__location--icon icon icon-running"></span>
+                <p class="sidenav__location--place">Marshall’s Beach</p>
+                <span class="sidenav__location--add icon icon-save"></span>
+              </div><!-- sidenav__location -->
+            </div><!-- sidenav__recomendation -->
+            <div class="sidenav__connections">
+              <h3 class="sidenav__connections--heading">Connections</h3>
+              <div class="sidenav__connections--user">
+                <img class="image-icon" src="images/profile-pic.jpg" alt="">
+                <p class="sidenav__connections--name">Adam M.</p>
+              </div><!-- user -->
+              <div class="sidenav__connections--user">
+                <img class="image-icon" src="images/brodie.jpg" alt="">
+                <p class="sidenav__connections--name">Terry S.</p>
+              </div><!-- user -->
+              <div class="sidenav__connections--user">
+                <img class="image-icon" src="images/profile-pics-007.jpg" alt="">
+                <p class="sidenav__connections--name">Donna W.</p>
+              </div><!-- user -->
+              <div class="sidenav__connections--user">
+                <img class="image-icon" src="images/profile2.jpg" alt="">
+                <p class="sidenav__connections--name">Gloria S.</p>
+              </div><!-- user -->
+              <div class="sidenav__connections--user">
+                <a class="sidenav__connections--image image-icon-view" src="" alt=""><span class="sidenav__connections--number">+8</span></a>
+                <p class="sidenav__connections--name">View</p>
+              </div><!-- user -->
+            </div><!-- sidenav__connections -->
+            <div class="sidenav__instagram">
+              <h3 class="sidenav__instagram--heading">Instagram feed</h3>
+            </div>
+          </div><!-- sidenav__body -->
+        </div><!-- SIDENAV -->
+
+      </div>
+    </div>
 
   <!--build:js js/main.min.js -->
   <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js"></script>
   <script src="js/main.js"></script>
   <!-- endbower -->
   <!-- endbuild -->

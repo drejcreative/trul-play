@@ -1,0 +1,16 @@
+.image-icon {
+  display: block;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  border: 3px solid $focus;
+  box-shadow: 5px 5px 20px 0 rgba(243, 138, 25, 0.3);
+}
+.image-icon-view {
+  display: block;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  background: $icon-color;
+  color: $light;
+}

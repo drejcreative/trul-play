@@ -1,0 +1,23 @@
+.button {
+  height: 45px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: none;
+  outline:none;
+  font-family: $third-font;
+  font-size: 14px;
+  text-transform: uppercase;
+
+}
+.button__main {
+  @extend .button;
+  background-color: $light;
+  color: $text-color;
+  box-shadow: 0 7px 15px 0 rgba(146, 152, 160, 0.15);
+}
+.button__active {
+  @extend .button;
+  background-color: $focus;
+  color: $light;
+  box-shadow: 0 7px 15px 0 rgba(243, 138, 25, 0.4);
+}
