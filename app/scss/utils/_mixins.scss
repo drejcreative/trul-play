@@ -1,0 +1,16 @@
+@mixin background-image-retina($file, $type) {
+  background-image: url($file + '.' + $type);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    & {
+      background-image: url($file + '@2x.' + $type);
+    }
+  }
+}
+//usage
+/*
+#foo {
+  @include background-image-retina('foobar', 'png');
+  background: repeat;
+}
+*/

@@ -6,86 +6,154 @@
     content:' ';
     vertical-align:middle;
     display: inline-block;
-    background-image: url("../images/svg/sprite.svg");
+    background-image: url("../images/icons/svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 6.8em 33.2em;
+    background-size: 6.8em 34.8em;
 }
 
 .no-svg .icon:before {
-    background-image: url("../images/svg/sprite.png");
+    background-image: url("../images/icons/svg/sprite.png");
 }
-.icon.icon-dine:before {
-    background-position: 0em 0em;
-    width: 2.1em;
-    height: 2.1em;
+
+
+
+  .icon.icon-dine:before {
+      background-position: 0em 0em;
+      width: 2.1em;
+      height: 2.1em;
   }
-.icon.icon-drink:before {
-    background-position: 0em -2.1em;
-    width: 2em;
-    height: 2.2em;
-}
-.icon.icon-explore-active:before {
-    background-position: 0em -4.3em;
-    width: 1.6em;
-    height: 2.1em;
-}
-.icon.icon-explore-active_2:before {
-    background-position: 0em -6.4em;
-    width: 1.6em;
-    height: 2.1em;
-}
-.icon.icon-handshake:before {
-    background-position: 0em -8.5em;
-    width: 2.6em;
-    height: 1.9em;
-}
-.icon.icon-house:before {
-    background-position: 0em -10.4em;
-    width: 2.1em;
-    height: 1.9em;
-}
-.icon.icon-medical:before {
-    background-position: 0em -12.3em;
-    width: 2.2em;
-    height: 2em;
-}
-.icon.icon-messages:before {
-    background-position: 0em -14.3em;
-    width: 2.1em;
-    height: 2.1em;
-}
-.icon.icon-my-location:before {
-    background-position: 0em -16.4em;
-    width: 2.4em;
-    height: 2.4em;
-}
-.icon.icon-save:before {
-    background-position: 0em -18.8em;
-    width: 2.1em;
-    height: 2.1em;
-}
-.icon.icon-save-copy:before {
-    background-position: 0em -20.9em;
-    width: 2.1em;
-    height: 2.1em;
-}
-.icon.icon-save-copy-2:before {
-    background-position: 0em -23em;
-    width: 2.1em;
-    height: 2.1em;
-}
-.icon.icon-search-grey:before {
-    background-position: 0em -25.1em;
-    width: 2.4em;
-    height: 2.4em;
-}
-.icon.icon-trips:before {
-    background-position: 0em -27.5em;
-    width: 2.1em;
-    height: 2.1em;
-}
-.icon.logo:before {
-    background-position: 0em -29.6em;
-    width: 6.8em;
-    height: 3.53em;
-}
+
+
+
+
+  .icon.icon-drink:before {
+      background-position: 0em -2.1em;
+      width: 2em;
+      height: 2.2em;
+  }
+
+
+
+
+  .icon.icon-explore-active:before {
+      background-position: 0em -4.3em;
+      width: 1.6em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.icon-explore-active_2:before {
+      background-position: 0em -6.4em;
+      width: 1.6em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.icon-handshake:before {
+      background-position: 0em -8.5em;
+      width: 2.6em;
+      height: 1.9em;
+  }
+
+
+
+
+  .icon.icon-house:before {
+      background-position: 0em -10.4em;
+      width: 2.1em;
+      height: 1.9em;
+  }
+
+
+
+
+  .icon.icon-medical:before {
+      background-position: 0em -12.3em;
+      width: 2.2em;
+      height: 2em;
+  }
+
+
+
+
+  .icon.icon-messages:before {
+      background-position: 0em -14.3em;
+      width: 2.1em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.icon-my-location:before {
+      background-position: 0em -16.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .icon.icon-running:before {
+      background-position: 0em -18.8em;
+      width: 1.6em;
+      height: 1.6em;
+  }
+
+
+
+
+  .icon.icon-save:before {
+      background-position: 0em -20.4em;
+      width: 2.1em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.icon-save-copy:before {
+      background-position: 0em -22.5em;
+      width: 2.1em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.icon-save-copy-2:before {
+      background-position: 0em -24.6em;
+      width: 2.1em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.icon-search-grey:before {
+      background-position: 0em -26.7em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .icon.icon-trips:before {
+      background-position: 0em -29.1em;
+      width: 2.1em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.logo:before {
+      background-position: 0em -31.2em;
+      width: 6.8em;
+      height: 3.53em;
+  }

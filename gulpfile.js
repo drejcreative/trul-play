@@ -30,7 +30,10 @@ var autoprefixerOptions = {
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
+      routes: {
+        "/bower_components": "bower_components"
+      }
     }
   });
 });

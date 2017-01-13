@@ -8,3 +8,16 @@ $third-font:     'Montserrat', sans-serif;
 $regular:         400;
 $medium:          500;
 $bold:            700;
+
+h1, h2, h3, h4, h5, h6 { font-family: $secound-font;}
+h1, h2 { line-height: 1.1; }
+h3, h4 { line-height: 1.3; }
+
+.sector-header {
+  font-family: $third-font;
+  font-size: 13px;
+  line-height: 1.08;
+  color: $focus;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}

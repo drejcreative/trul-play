@@ -1,0 +1,174 @@
+.sidenav {
+  width: 480px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -480px;
+
+  //=======================================
+  //   Sidenav Header
+  //=======================================
+  &__header {
+    @include background-image-retina('../images/background-image', 'png')
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 254px;
+    position: relative;
+  } // End of sidenav__header
+
+  &__top {
+    padding: 30px;
+    &--close {
+      font-family: $secound-font;
+      font-size: 20px;
+      padding-left: 17px;
+      padding-top: 10px;
+      height: 45px;
+      width: 45px;
+      display: inline-block;
+      border-radius: 50%;
+      color: $light;
+      background-color: rgba(69, 73, 78, 0.6);
+    } // Close icon
+    &--buttonwrap {
+      float: right;
+    }
+    &--button {
+      margin-left: 20px;
+      display: inline-block;
+    }
+  } // End of sidenav__top
+
+  &__bottom {
+    position: absolute;
+    bottom: -20px;
+    &--image {
+      display: block;
+      float: left;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-left: 30px;
+      border: 3px solid $focus;
+      box-shadow: 5px 5px 20px 0 rgba(243, 138, 25, 0.3);
+    }
+    &--wrap {
+      display: inline-block;
+      margin-left: 30px;
+    }
+    &--heading {
+      font-size: 20px;
+      font-weight: $bold;
+      color: $light;
+    }
+    &--text {
+      font-size: 17px;
+      font-weight: $regular;
+      color: $light;
+    }
+  } // End of sidenav__bottom
+
+  //=======================================
+  //   Sidenav Body
+  //=======================================
+  &__body {
+    background-color: $light;
+  }
+
+  //   Sidenav Icons
+  //=======================================
+  &__icons {
+    text-align: right;
+    margin: 21px 30px 0 0;
+    &--top {
+      padding-left: 20px;
+      display: inline-block;
+    }
+  } // End of sidenav__icons
+
+  //   Sidenav about
+  //=======================================
+  &__about {
+    padding: 20px 30px 30px 30px;
+    &--text {
+      font-family: $main-font;
+      font-size: 17px;
+      line-height: 1.47;
+      color: $text-color;
+    }
+  } // End of sidenav__about
+
+  //   Sidenav Recommendation
+  //=======================================
+  &__recomendation {
+    padding: 0px 30px 30px 30px;
+    &--heading {
+      @extend .sector-header;
+    }
+  } // End of sidenav__recomendation
+  &__location {
+    margin-top: 15px;
+    &--icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+    &--place {
+      display: inline-block;
+      font-family: $main-font;
+      font-weight: $regular;
+      font-size: 17px;
+      color: $text-color;
+      vertical-align: middle;
+    }
+    &--add {
+      display: inline-block;
+      float: right;
+      vertical-align: middle;
+    }
+  } // End of sidenav__location
+
+  //   Sidenav Connections
+  //=======================================
+  &__connections {
+    padding: 0px 30px 30px 30px;
+    @extend .clearfix;
+    &--heading {
+      @extend .sector-header;
+    }
+    &--user {
+      width: 18%;
+      margin-right: 2%;
+      margin-top: 15px;
+      float: left;
+    }
+    &--image {
+      font-size: 20px;
+      font-family: $third-font;
+      position: relative;
+    }
+    &--number {
+      position: absolute;
+      top: 20px;
+      left: 17px;
+    }
+    &--name {
+      text-align: center;
+      font-family: $main-font;
+      font-size: 15px;
+      line-height: 1.2;
+      color: $text-color;
+      padding-top: 12px;
+    }
+  } // End of sidenav__connections
+
+  //   Sidenav Instagram feed
+  //=======================================
+  &__instagram {
+    padding: 0px 30px 30px 30px;
+    &--heading {
+      @extend .sector-header;
+    }
+  } // End of sidenav__instagram
+
+}
