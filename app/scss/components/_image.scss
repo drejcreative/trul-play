@@ -14,3 +14,20 @@
   background: $icon-color;
   color: $light;
 }
+.image-icon-message {
+  display: block;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  border: 3px solid $focus;
+  box-shadow: 5px 5px 20px 0 rgba(243, 138, 25, 0.3);
+}
+.image-profile {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 30px;
+  border: 3px solid $focus;
+  box-shadow: 5px 5px 20px 0 rgba(243, 138, 25, 0.3);
+}

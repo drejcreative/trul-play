@@ -1,0 +1,56 @@
+.messages {
+  position: absolute;
+  //top: 80px;
+  //left: 200px;
+  width: 310px;
+  height: 300px;
+  display: none;
+
+  font-family: $main-font;
+  font-size: 15px;
+  line-height: 1.2;
+  color: $text-color;
+  background: $light;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
+  &__header {
+    padding: 10px;
+    border-bottom: 1px solid lighten($text-color, 20);
+  }
+
+  &__wrap {
+    padding: 10px;
+    border-bottom: 1px solid lighten($text-color, 20);
+    position: relative;
+    cursor: pointer;
+    &--image {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &--text {
+      padding-left: 10px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &--textwrap {
+      white-space: nowrap;
+      width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+    }
+    &--icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 8px;
+    }
+  } // End ofmessages__wrap
+
+  &__footer {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    cursor: pointer;
+  }
+} // End of messages

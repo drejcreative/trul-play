@@ -6,10 +6,26 @@ $(function() {
     // get height of window and set it as height of our main element
     var wheight = $(window).height() -80;// get height - 80px
     $('#wrapper').css('height', wheight);
+    var x = $('.header__messages--icon').offset();
+
+    var winWidth;
+    winWidth = $(window).width();
+    if ( winWidth <= 955 ) {
+      $('.messages').css({"top": x.top + 52 , "left": 0, "position":"absolute"});
+    } else {
+      $('.messages').css({"top": x.top + 52 , "left": x.left, "position":"absolute"});
+    }
 
     $(window).resize(function() {
         var wheight = $(window).height() -80;//get height of wondow after resize
         $('#wrapper').css('height', wheight);  //add that height
+        var x = $('.header__messages--icon').offset();
+        var winWidth = $(window).width();
+        if ( winWidth <= 955 ) {
+          $('.messages').css({"top": x.top + 52 , "left": 0, "position":"absolute"});
+        } else {
+          $('.messages').css({"top": x.top + 52 , "left": x.left, "position":"absolute"});
+        }
     });//on resize
 
 
@@ -22,6 +38,65 @@ $(function() {
     $('#sidenav-close').click(function(event) {
         event.preventDefault();
         closeNav();
+    });
+
+    // Open user profile
+    $('#user-profile').click( function(e){
+        e.stopPropagation();
+        $('.profile').toggle(300);
+      });
+    $(document).click( function(){
+      $('.profile').hide();
+    });
+
+    // Scrollbar for messages
+    $('.messages__body').slimScroll({
+        height: '222px'
+    });
+
+    // Open messages
+    $('#msg').click( function(e){
+        e.stopPropagation();
+        //var x = $('.header__messages--icon').offset();
+        //$('.messages').css({"top": x.top + 52 , "left": x.left, "position":"absolute"});
+        $('.messages').toggle(300);
+      });
+    $(document).click( function(){
+      $('.messages').hide();
+    });
+
+    /*========================================
+    =               OPEN MODALS              =
+    ========================================*/
+    //select all the a tag with name equal to modal
+    $('#sendMessage').click(function(e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        //Get the A tag
+        var a, winH, winW, ah, aw, b;
+
+        a = $(".msgmodal");
+        b = $(".modal-bkg");
+        //Get the window height and width
+        ah = a.height();
+        aw = a.width();
+        winH = $(window).height();
+        winW = $(window).width();
+        //Set the popup window to center
+        a.css('top', winH/2 - ah /2);
+        a.css('left', winW/2 - aw /2);
+        //transition effect
+        a.fadeIn(500);
+        b.addClass("modal-over");
+        b.fadeIn(500);
+    });
+
+    //if close button is clicked
+    $('.closeModal').click(function (e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        $(".msgmodal").hide();
+        $(".modal-bkg").removeClass("modal-over");
     });
 
     /*========================================
@@ -55,6 +130,29 @@ $(function() {
       }
     }
 
+    /*========================================
+    =               Toastr setup             =
+    ========================================*/
+    toastr.options = {
+      closeButton: true,
+      closeMethod: 'fadeOut',
+      closeDuration: 300,
+      closeEasing: 'swing',
+      preventDuplicates: true,
+      positionClass: 'toast-bottom-left',
+      timeOut: 3000,
+      extendedTimeOut: 6000
+    };
+
+    $('#connectTo').click(function() {
+      toastr.success('Successfully added');
+      $('#connectTo').html('Conected').css('color','#f38a1a');
+    });
+    $('#sendMsg').click(function() {
+      swal("Good job!", "Message successfully sent!", "success");
+      $(".msgmodal").hide();
+      $(".modal-bkg").removeClass("modal-over");
+    });
 
 /*========================================
 =            Intercative MAP            =
@@ -183,7 +281,7 @@ $(function() {
   }
 
   /*===============================================
-  =              Custom Sctive Marker             =
+  =              Custom Active Marker             =
   ================================================*/
   function CustomMarkerActive(latlng, map, imageSrc) {
       this.latlng_ = latlng;
@@ -303,7 +401,7 @@ $(function() {
   };
 
   var dataGreen = [{
-      profileImage: "../images/adam-parker.jpg",
+      profileImage: "../images/profile-pics-20.jpg",
       pos: [32.472755, -99.749899],
   }];
 

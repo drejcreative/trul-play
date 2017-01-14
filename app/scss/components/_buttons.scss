@@ -1,13 +1,21 @@
 .button {
-  height: 45px;
-  padding: 15px 30px;
   border-radius: 50px;
   border: none;
   outline:none;
   font-family: $third-font;
-  font-size: 14px;
   text-transform: uppercase;
-
+  cursor: pointer;
+}
+.button-large {
+  height: 45px;
+  padding: 15px 30px;
+  font-size: 14px;
+}
+.button-small {
+  height: 30px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
 }
 .button__main {
   @extend .button;

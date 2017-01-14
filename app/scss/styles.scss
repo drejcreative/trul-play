@@ -5,8 +5,12 @@
   	Website: http://drejcreative.com
   */
 
-  // style.scss imports
+  ///////////////////
+  // Imports
+  ///////////////////
+  @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
+  // style.scss imports
   @import 'utils/module';
   @import 'base/module';
   @import 'components/module';
