@@ -17,13 +17,19 @@ var svg2png   = require('gulp-svg2png');
 var spritesmith = require('gulp.spritesmith');
 var runSequence = require('run-sequence');
 var imgRetina = require('gulp-img-retina');
+var pxtorem = require('gulp-pxtorem');
 var $ = require('gulp-load-plugins')({lazy: true});
 
+//For old NodeJS versions
 var Promise = require('es6-promise').polyfill();
 
 // ... variables
 var autoprefixerOptions = {
   browsers: ['last 20 versions', '> 5%', 'Firefox ESR']
+};
+
+var pxtoremOptions = {
+    replace: false
 };
 
 // Start browserSync server
@@ -45,6 +51,7 @@ gulp.task('sass', function() {
     .pipe(sass().on('error', sass.logError)) // Passes it through a gulp-sass
     .pipe(sourcemaps.write())
     .pipe(autoprefixer(autoprefixerOptions)) // Adding cross browser prefixes
+    .pipe(pxtorem(pxtoremOptions))
     .pipe(gulp.dest('app/css')) // Outputs it in the css folder
     .pipe(browserSync.reload({ // Reloading with Browser Sync
       stream: true

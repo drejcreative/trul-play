@@ -89,8 +89,9 @@
   z-index: 999999;
 }
 
+//Overvrite toastr classes
 #toast-container>div {
-  border-radius: 6px;
+  border-radius: 20px;;
 }
 .toast-message {
   font-family: $main-font;
@@ -101,6 +102,8 @@
 .toast-close-button{
   top: 0;
 }
+//Overvrite alert box message
 .sweet-alert button {
   background-color: $focus!important;
+  border-radius: 20px;
 }

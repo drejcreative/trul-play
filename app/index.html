@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Start template</title>
+
   <!--build:css css/main.min.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="../bower_components/toastr/toastr.min.css">
@@ -50,8 +51,8 @@
             <div class="sidenav__top">
               <a id="sidenav-close" href=""><span class="sidenav__top--close">x</span></a>
               <div class="sidenav__top--buttonwrap">
-                <button id="connectTo" class="sidenav__top--button button-large button__main">Connect</button>
-                <button id="sendMessage" class="sidenav__top--button button-large button__active">Message</button>
+                <button id="connectTo" class="sidenav__top--button button-large button__main btn">Connect</button>
+                <button id="sendMessage" class="sidenav__top--button button-large button__active btn">Message</button>
               </div>
             </div><!-- Top -->
             <div class="sidenav__bottom">
@@ -166,6 +167,9 @@
       </div>
     </div><!-- End of profile popup -->
 
+    <!--===================================================-->
+    <!--                    Messages                       -->
+    <!--===================================================-->
     <div class="messages">
         <div class="messages__header">
           <p>You have 5 messages</p>
@@ -219,9 +223,9 @@
         </div>
     </div><!-- End of message popup -->
 
-    <!--==================================================-->
-    <!--                    Profile                       -->
-    <!--==================================================-->
+    <!--============================================================-->
+    <!--                    Send Message modal                      -->
+    <!--============================================================-->
     <div class="modal-bkg"></div>
 
     <div class="msgmodal">
@@ -238,18 +242,18 @@
         </form>
       </div>
       <div class="msgmodal__footer">
-        <button class="msgmodal__footer--button button-small button__main closeModal">Close</button>
-        <button id="sendMsg" class="msgmodal__footer--button button-small button__active">Send</button>
+        <button class="msgmodal__footer--button button-medium button__main closeModal">Close</button>
+        <button id="sendMsg" class="msgmodal__footer--button button-medium button__active">Send</button>
       </div>
     </div>
 
+  <script src="http://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=initialize"></script>
   <!--build:js js/main.min.js -->
   <!-- bower:js -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/toastr/toastr.js"></script>
   <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/jquery.slimscroll.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js"></script>
   <script src="js/main.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
