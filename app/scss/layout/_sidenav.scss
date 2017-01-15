@@ -45,7 +45,7 @@
       display: inline-block;
       cursor: pointer;
       @include breakpoint(0 $md) {
-        margin-left: 10px;
+        margin-left: 5px;
       }
     }
   } // End of sidenav__top
