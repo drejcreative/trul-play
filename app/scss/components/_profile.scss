@@ -1,0 +1,53 @@
+.profile {
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  width: 300px;
+  height: auto;
+  display: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
+  &__header {
+    @include background-image-retina('../images/dallas', 'jpg')
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 30px;
+    &--image {
+      margin: 0 auto;
+    }
+    &--heading {
+      text-align: center;
+      font-size: 20px;
+      font-weight: $bold;
+      color: $light;
+      padding-top: 10px;
+    }
+    &--text {
+      text-align: center;
+      font-size: 17px;
+      font-weight: $regular;
+      color: $light;
+      padding-top: 10px;
+    }
+    &--wrap {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+  } // End of profile__header
+
+  &__body {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $light;
+    &--link {
+      @extend .sector-header;
+      text-decoration: none;
+      padding-bottom: 0px;
+      font-size: 12px;
+    }
+  } // End of profile__body
+
+} // End of profile

@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Start template</title>
+
   <!--build:css css/main.min.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css">
   <link rel="stylesheet" href="css/styles.css" media="screen">
   <!-- endbower -->
   <!-- endbuild -->
@@ -25,12 +28,10 @@
         <a class="header__link header__trips--text" href=""><span class="header__trips--icon icon icon-trips"></span>Trips</a>
       </div><!-- Trips -->
       <div class="header__messages">
-        <a class="header__link header__messages--text" href=""><span class="header__messages--icon">2</span>Messages</a>
+        <div id="msg" class="header__link"><span class="header__messages--icon">5</span><span class="header__messages--text">Messages</span></div>
       </div><!-- Messages -->
 
-      <!--<a href="#" class="toggle-nav">Toggle Nav</a>-->
-
-      <div class="header__user">
+      <div id="user-profile" class="header__user">
         <div class="header__user--name">John</div>
         <img class="header__user--image" src="images/profile-pics-20.jpg" alt="">
       </div><!-- User -->
@@ -41,25 +42,28 @@
     <!--===============================================-->
     <div id="wrapper">
       <div class="main">
-        <div id="map"></div>
 
+        <!--==================================================-->
+        <!--                    Sidenav                       -->
+        <!--==================================================-->
         <div class="sidenav">
           <div class="sidenav__header">
             <div class="sidenav__top">
               <a id="sidenav-close" href=""><span class="sidenav__top--close">x</span></a>
               <div class="sidenav__top--buttonwrap">
-                <button class="sidenav__top--button button__main">Connect</button>
-                <button class="sidenav__top--button button__active">Message</button>
+                <button id="connectTo" class="sidenav__top--button button-large button__main btn">Connect</button>
+                <button id="sendMessage" class="sidenav__top--button button-large button__active btn">Message</button>
               </div>
             </div><!-- Top -->
             <div class="sidenav__bottom">
-                <img class="sidenav__bottom--image" src="images/adam-parker.jpg" alt="">
+                <img class="sidenav__bottom--image image-profile" src="images/adam-parker.jpg" alt="">
                 <div class="sidenav__bottom--wrap">
                   <h2 class="sidenav__bottom--heading">Michael, 29</h2>
                   <h3 class="sidenav__bottom--text">San Francisco, California</h3>
                 </div>
             </div><!-- Bottom -->
           </div><!-- sidenav__header -->
+
           <div class="sidenav__body">
             <div class="sidenav__icons">
               <span class="sidenav__icons--top icon icon-house"></span>
@@ -74,17 +78,17 @@
               <div class="sidenav__location">
                 <span class="sidenav__location--icon icon icon-dine"></span>
                 <p class="sidenav__location--place">Little Delhi - Indian Restaurant</p>
-                <span class="sidenav__location--add icon icon-save"></span>
+                <span class="sidenav__location--add icon icon-save"><span class="sidenav__location--tooltip">Add to your trip</span></span>
               </div><!-- sidenav__location -->
               <div class="sidenav__location">
                 <span class="sidenav__location--icon icon icon-drink"></span>
                 <p class="sidenav__location--place">Oceanic View Rooftop</p>
-                <span class="sidenav__location--add icon icon-save"></span>
+                <span class="sidenav__location--add icon icon-save"><span class="sidenav__location--tooltip">Add to your trip</span></span>
               </div><!-- sidenav__location -->
               <div class="sidenav__location">
                 <span class="sidenav__location--icon icon icon-running"></span>
                 <p class="sidenav__location--place">Marshall’s Beach</p>
-                <span class="sidenav__location--add icon icon-save"></span>
+                <span class="sidenav__location--add icon icon-save"><span class="sidenav__location--tooltip">Add to your trip</span></span>
               </div><!-- sidenav__location -->
             </div><!-- sidenav__recomendation -->
             <div class="sidenav__connections">
@@ -116,13 +120,140 @@
           </div><!-- sidenav__body -->
         </div><!-- SIDENAV -->
 
+        <!--=================== Map ====================-->
+        <div id="map"></div>
+
+        <div class="map__top">
+          <div class="map__search">
+            <input class="map__search--input" type="text" placeholder="Search for friends and places">
+          </div><!-- End of search -->
+          <div class="map__iconswrap">
+            <div class="map__icons number-1">
+              <span class="map__icons--number">1&deg</span>
+            </div>
+            <div class="map__icons number-2">
+              <span class="map__icons--number">2&deg</span>
+            </div>
+            <div class="map__icons number-3">
+              <span class="map__icons--number">3&deg</span>
+            </div>
+          </div>
+        </div><!-- map__top -->
+        <div class="map__bottom">
+          <div class="map__bottom--icon">
+            <span class="icon icon-my-location"></span>
+          </div>
+        </div>
+
+      </div><!-- End of main -->
+    </div><!-- End of wrapper -->
+
+    <!--==================================================-->
+    <!--                    Profile                       -->
+    <!--==================================================-->
+    <div class="profile">
+      <div class="profile__header">
+        <img class="profile__header--image image-profile" src="images/profile-pics-20.jpg" alt="">
+          <h2 class="profile__header--heading">John, 32</h2>
+          <h3 class="profile__header--text">Abilene, Texas</h3>
+          <div class="profile__header--wrap">
+            <button class="profile__header--button button-small button__main">Profile</button>
+            <button class="profile__header--button button-small button__active">Sign out</button>
+          </div>
+      </div>
+      <div class="profile__body">
+        <a class="profile__body--link" href="">Connections</a>
+        <a class="profile__body--link" href="">Recommendations</a>
+      </div>
+    </div><!-- End of profile popup -->
+
+    <!--===================================================-->
+    <!--                    Messages                       -->
+    <!--===================================================-->
+    <div class="messages">
+        <div class="messages__header">
+          <p>You have 5 messages</p>
+        </div>
+        <div class="messages__body">
+
+          <div class="messages__wrap">
+            <img class="messages__wrap--image image-icon-message" src="images/brodie.jpg" alt="">
+            <div class="messages__wrap--text">
+              <h3>Question?</h3>
+              <p class="messages__wrap--textwrap">I have one question for you? And it is longe one :)</p>
+              <span class="messages__wrap--icon icon icon-messages">5min</span>
+            </div>
+          </div><!-- message__wrap -->
+          <div class="messages__wrap">
+            <img class="messages__wrap--image image-icon-message" src="images/profile-pics-007.jpg" alt="">
+            <div class="messages__wrap--text">
+              <h3>Lorem</h3>
+              <p class="messages__wrap--textwrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur alias aspernatur perferendis enim vitae culpa similique molestias totam quos eveniet, repudiandae obcaecati, tempora architecto vero exercitationem rem earum. Sed, obcaecati.</p>
+              <span class="messages__wrap--icon icon icon-messages">55min</span>
+            </div>
+          </div><!-- message__wrap -->
+          <div class="messages__wrap">
+            <img class="messages__wrap--image image-icon-message" src="images/profile2.jpg" alt="">
+            <div class="messages__wrap--text">
+              <h3>Sportsman</h3>
+              <p class="messages__wrap--textwrap">Sportsman delighted improving.</p>
+              <span class="messages__wrap--icon icon icon-messages">Today</span>
+            </div>
+          </div><!-- message__wrap -->
+          <div class="messages__wrap">
+            <img class="messages__wrap--image image-icon-message" src="images/profile-pic.jpg" alt="">
+            <div class="messages__wrap--text">
+              <h3>Advice</h3>
+              <p class="messages__wrap--textwrap">Advice me cousin an spring of needed. Tell use paid law ever yet new.</p>
+              <span class="messages__wrap--icon icon icon-messages">2 days</span>
+            </div>
+          </div><!-- message__wrap -->
+          <div class="messages__wrap">
+            <img class="messages__wrap--image image-icon-message" src="images/profile-pic.jpg" alt="">
+            <div class="messages__wrap--text">
+              <h3>The Nordic disciplines </h3>
+              <p class="messages__wrap--textwrap">The Nordic disciplines include cross-country skiing and ski jumping, which share in common the use of binding that attach at the toes of the skier's boots but not at the heels. </p>
+              <span class="messages__wrap--icon icon icon-messages">3 days</span>
+            </div>
+          </div><!-- message__wrap -->
+
+        </div>
+        <div class="messages__footer">
+          See All Messages
+        </div>
+    </div><!-- End of message popup -->
+
+    <!--============================================================-->
+    <!--                    Send Message modal                      -->
+    <!--============================================================-->
+    <div class="modal-bkg"></div>
+
+    <div class="msgmodal">
+      <div class="msgmodal__header">
+        Send message to Michael
+        <span class="msgmodal__header--close closeModal">x</span>
+      </div>
+      <div class="msgmodal__body">
+        <form action="">
+          <label class="msgmodal__body--subject" for="subject">Subject</label>
+          <input class="msgmodal__body--input" type="text" name="subject" value="">
+          <label class="msgmodal__body--message" for="message">Enter your message</label>
+          <textarea class="msgmodal__body--text" name="message" rows="4"></textarea>
+        </form>
+      </div>
+      <div class="msgmodal__footer">
+        <button class="msgmodal__footer--button button-medium button__main closeModal">Close</button>
+        <button id="sendMsg" class="msgmodal__footer--button button-medium button__active">Send</button>
       </div>
     </div>
 
+  <script src="http://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=initialize"></script>
   <!--build:js js/main.min.js -->
   <!-- bower:js -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js"></script>
+  <script src="../bower_components/toastr/toastr.js"></script>
+  <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/jquery.slimscroll.min.js"></script>
   <script src="js/main.js"></script>
   <!-- endbower -->
   <!-- endbuild -->

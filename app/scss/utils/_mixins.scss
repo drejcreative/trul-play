@@ -1,3 +1,4 @@
+//Automaticly changing retina background
 @mixin background-image-retina($file, $type) {
   background-image: url($file + '.' + $type);
 
@@ -7,6 +8,7 @@
     }
   }
 }
+
 //usage
 /*
 #foo {

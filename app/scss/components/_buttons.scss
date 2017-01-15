@@ -1,23 +1,57 @@
 .button {
-  height: 45px;
-  padding: 15px 30px;
   border-radius: 50px;
   border: none;
   outline:none;
   font-family: $third-font;
-  font-size: 14px;
   text-transform: uppercase;
-
+  cursor: pointer;
+}
+.button-large {
+  height: 45px;
+  padding: 15px 30px;
+  font-size: 14px;
+  @include breakpoint(0 $sm) {
+    height: 40px;
+    padding: 10px 25px;
+  }
+}
+.button-medium {
+  height: 40px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+.button-small {
+  height: 30px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
 }
 .button__main {
   @extend .button;
   background-color: $light;
   color: $text-color;
   box-shadow: 0 7px 15px 0 rgba(146, 152, 160, 0.15);
+  transition: all .2s ease-out;
+  &:hover {
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+  }
+  &:active {
+    box-shadow: inset 0 3px 3px 0 rgba(0,0,0,0.14), inset 0 1px 7px 0 rgba(0,0,0,0.12), inset 0 3px 1px -1px rgba(0,0,0,0.2);
+  }
 }
 .button__active {
   @extend .button;
   background-color: $focus;
   color: $light;
   box-shadow: 0 7px 15px 0 rgba(243, 138, 25, 0.4);
+  transition: all .2s ease-out;
+  &:hover {
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+    background-color: lighten($focus, 5);
+  }
+  &:active {
+    box-shadow: inset 0 3px 3px 0 rgba(0,0,0,0.14), inset 0 1px 7px 0 rgba(0,0,0,0.12), inset 0 3px 1px -1px rgba(0,0,0,0.2);
+    background-color: darken($focus, 5);
+  }
 }

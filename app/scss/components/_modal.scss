@@ -1,0 +1,109 @@
+.msgmodal {
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border-radius: 6px;
+    width: 450px;
+    position:fixed;
+    display:none;
+    z-index:999999999999;
+    background: $light;
+    font-family: $main-font;
+    color: $text-color;
+    @include breakpoint(0 $md) {
+      width: 90%;
+    }//End of Breakpoint
+
+    &__header {
+      position: relative;
+      padding: 20px;
+      border-bottom: 1px solid lighten($text-color, 30);
+      &--close {
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    &__body {
+      padding: 20px;
+      border-bottom: 1px solid lighten($text-color, 30);
+      &--subject {
+        display: block;
+        padding-bottom: 10px;
+      }
+      &--input {
+        border-radius: 6px;
+        outline: none;
+        display: block;
+        width: 100%;
+        border: 1px solid darken($light, 10%);
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        transition: all .3s ease;
+        &:focus {
+          border: 1px solid $focus;
+          color: darken($text-color, 20);
+        }
+      } // End of input
+      &--message {
+        display: block;
+        padding-bottom: 10px;
+      }
+      &--text {
+        border-radius: 6px;
+        outline: none;
+        display: block;
+        width: 100%;
+        border: 1px solid darken($light, 10%);
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        transition: all .3s ease;
+        resize: vertical;
+        overflow: auto;
+        max-height:300px;
+        min-height:100px;
+        &:focus {
+          border: 1px solid $focus;
+          color: darken($text-color, 20);
+        }
+      }
+    } // End of msgmodal__body
+
+    &__footer {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    } // End of msgmodal__footer
+
+} // End of message modal
+
+
+.modal-over {
+  overflow: auto;
+  background: $light;
+  background-color: rgba(255,255,255,0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+}
+
+//Overvrite toastr classes
+#toast-container>div {
+  border-radius: 20px;;
+}
+.toast-message {
+  font-family: $main-font;
+}
+.toast-success {
+  background: $focus;
+}
+.toast-close-button{
+  top: 0;
+}
+//Overvrite alert box message
+.sweet-alert button {
+  background-color: $focus!important;
+  border-radius: 20px;
+}

@@ -3,10 +3,15 @@
   	Version: 1.0
   	Author: Andrej Vajagoc
   	Website: http://drejcreative.com
+    email: andrejv@drejcreative.com
   */
 
-  // style.scss imports
+  ///////////////////
+  // Imports
+  ///////////////////
+  @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
+  // style.scss imports
   @import 'utils/module';
   @import 'base/module';
   @import 'components/module';
