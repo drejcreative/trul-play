@@ -39,4 +39,4 @@ And add `http://localhost:3000` to you browser to live preview your work
 
 For build optimized and ready for production type `gulp build` in CMD and check optimized version in `dist` folder
 But some part of the app only work on server so easiest way to start it in `dist` folder is to install HTTP server globaly
-`npm install http-server -g` and then start it in `dist` folder from Cmd with command `http-server -a localhost -p 8000 -c-1` and open browser on `http://localhost:8080` to view your server
+`npm install http-server -g` and then start it in `dist` folder from Cmd with command `http-server -a localhost -p 8000 -c-1` and open browser on `http://localhost:8000` to view your server
